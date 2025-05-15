@@ -1,0 +1,289 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Light Mode (Default) - keeping for reference but site will default to dark */
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 222 90% 42%;  /* #0058dc - previously #003dd6 */
+    --primary-foreground: 0 0% 100%;  /* Updated to pure white #ffffff */
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222 90% 42%;  /* #0058dc - previously #003dd6 */
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+    
+    /* React theme color */
+    --react-color: 210 100% 44%;  /* #0071E1 - updated from #00D5F7 */
+    --react-color-muted: 210 100% 44%;  /* #0071E1 with opacity */
+    
+    /* Shopify theme color */
+    --shopify-color: 79 46% 51%;  /* #95BF47 */
+    --shopify-color-muted: 79 46% 51%;  /* #95BF47 with opacity */
+    
+    /* Custom blue for CTA buttons */
+    --blue-cta: 212 100% 43%;  /* #0058dc - updated from #003dd6 */
+  }
+
+  /* Making dark theme the default with consistent #101010 background across the site */
+  :root {
+    --background: 0 0% 6%;  /* #101010 */
+    --foreground: 0 0% 98%;  /* #fafafa */
+
+    --card: 0 0% 6%;  /* #101010 to match main background */
+    --card-foreground: 0 0% 98%;  /* #fafafa */
+
+    --popover: 0 0% 6%;  /* #101010 to match main background */
+    --popover-foreground: 0 0% 98%;  /* #fafafa */
+
+    --primary: 0 0% 98%;  /* #fafafa */
+    --primary-foreground: 0 0% 100%;  /* Updated to pure white #ffffff */
+
+    --secondary: 240 3.7% 15.9%;  /* #27272a */
+    --secondary-foreground: 0 0% 98%;  /* #fafafa */
+
+    --muted: 240 3.7% 15.9%;  /* #27272a */
+    --muted-foreground: 240 5% 64.9%;  /* #a1a1aa */
+
+    --accent: 240 3.7% 15.9%;  /* #27272a */
+    --accent-foreground: 0 0% 98%;  /* #fafafa */
+
+    --destructive: 0 62.8% 30.6%;  /* #7f1d1d */
+    --destructive-foreground: 0 0% 98%;  /* #fafafa */
+
+    --border: 240 3.7% 15.9%;  /* #27272a */
+    --input: 240 3.7% 15.9%;  /* #27272a */
+    --ring: 240 4.9% 83.9%;  /* #d4d4d8 */
+    
+    /* Dark mode sidebar - updated to match site background */
+    --sidebar-background: 0 0% 6%;  /* #101010 to match main background */
+    --sidebar-foreground: 240 4.8% 95.9%;  /* #f4f4f5 */
+    --sidebar-primary: 224.3 76.3% 48%;  /* #3b82f6 */
+    --sidebar-primary-foreground: 0 0% 100%;  /* #ffffff */
+    --sidebar-accent: 240 3.7% 15.9%;  /* #27272a */
+    --sidebar-accent-foreground: 240 4.8% 95.9%;  /* #f4f4f5 */
+    --sidebar-border: 240 3.7% 15.9%;  /* #27272a */
+    --sidebar-ring: 217.2 91.2% 59.8%;  /* #60a5fa */
+    
+    /* React theme color */
+    --react-color: 210 100% 44%;  /* #0071E1 - updated from #00D5F7 */
+    --react-color-muted: 210 100% 44%;  /* #0071E1 with reduced opacity */
+    
+    /* Shopify theme color */
+    --shopify-color: 79 46% 51%;  /* #95BF47 */
+    --shopify-color-muted: 79 46% 51%;  /* #95BF47 with reduced opacity */
+    
+    /* Custom blue for CTA buttons */
+    --blue-cta: 222 90% 42%;  /* #0058dc - updated from #003dd6 */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+  
+  /* Glass card effect for consistent styling */
+  .glass-card {
+    @apply backdrop-blur-md border bg-[#101010]/20 shadow-lg;
+  }
+  
+  .react-glass {
+    @apply glass-card border-[#00D5F7]/50 shadow-[#00D5F7]/20;
+  }
+  
+  .shopify-glass {
+    @apply glass-card border-[#95BF47]/50 shadow-[#95BF47]/20;
+  }
+  
+  .combined-glass {
+    @apply glass-card bg-gradient-to-br from-[#00D5F7]/20 to-[#95BF47]/20 border-white/20 shadow-[#00D5F7]/10 hover:shadow-[#95BF47]/20;
+  }
+  
+  /* Custom button for CTA */
+  .cta-button {
+    @apply bg-[#0058dc] text-white hover:bg-[#0058dc]/90;
+  }
+  
+  /* Dual-colored neon border effect */
+  .dual-neon-card {
+    position: relative;
+    border: none !important;
+  }
+  
+  .dual-neon-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 0.5rem;
+    padding: 2px;
+    background: linear-gradient(90deg, #00D5F7, #95BF47);
+    -webkit-mask: 
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    z-index: 1;
+    box-shadow:
+      0 0 10px rgba(0, 213, 247, 0.6),
+      0 0 20px rgba(149, 191, 71, 0.4);
+  }
+  
+  .border-gradient-dual {
+    border: none;
+  }
+
+  /* New styling classes for consistent look across pages */
+  .section-heading {
+    @apply text-3xl font-bold mb-6 text-white;
+  }
+
+  .section-subheading {
+    @apply text-xl font-bold mb-4 text-white;
+  }
+
+  .feature-card {
+    @apply glass-card backdrop-blur-md bg-[#101010]/40 border border-white/10 transition-all duration-500 
+    transform hover:-translate-y-1 rounded-lg h-full shadow-lg;
+  }
+
+  .feature-card-react {
+    @apply feature-card border-[#00D5F7]/40 shadow-[0_8px_20px_-6px_rgba(0,213,247,0.5)];
+  }
+
+  .feature-card-shopify {
+    @apply feature-card border-[#95BF47]/40 shadow-[0_8px_20px_-6px_rgba(149,191,71,0.5)];
+  }
+
+  .feature-card-custom {
+    @apply feature-card border-[#0058dc]/40 shadow-[0_8px_20px_-6px_rgba(0,88,220,0.5)];
+  }
+
+  .icon-container {
+    @apply mx-auto mb-4 p-3 rounded-full w-16 h-16 flex items-center justify-center;
+  }
+
+  .icon-container-react {
+    @apply icon-container bg-[#00D5F7]/10 text-[#00D5F7];
+  }
+
+  .icon-container-shopify {
+    @apply icon-container bg-[#95BF47]/10 text-[#95BF47];
+  }
+
+  .icon-container-custom {
+    @apply icon-container bg-[#0058dc]/10 text-[#0058dc];
+  }
+  
+  /* Mobile specific classes */
+  @media (max-width: 768px) {
+    .section-heading {
+      @apply text-2xl;
+    }
+    
+    .section-subheading {
+      @apply text-lg;
+    }
+    
+    .container {
+      @apply px-4;
+    }
+    
+    /* Adjust padding for better mobile experience */
+    section {
+      @apply py-8;
+    }
+  }
+}
+
+/* Custom styles for transitions */
+.page-transition {
+  transition: opacity 0.3s ease-in-out;
+}
+
+.page-enter {
+  opacity: 0;
+}
+
+.page-enter-active {
+  opacity: 1;
+}
+
+.page-exit {
+  opacity: 1;
+}
+
+.page-exit-active {
+  opacity: 0;
+}
+
+/* Animation for tags */
+@keyframes pulse {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Mobile menu animation */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out forwards;
+}
