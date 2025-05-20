@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -37,8 +36,7 @@ const Footer = () => {
           <div>
             <h4 className="font-bold mb-4 text-white">Contatti</h4>
             <ul className="space-y-2">
-              <li className="text-gray-400">info@connecteed.com</li>
-              <li className="text-gray-400">+39 123 456 7890</li>
+              <li className="text-gray-400">contact@connecteed.com</li>
               <li><Link to="/contatti" className="text-gray-400 hover:text-[#0065df] transition-colors">Contattaci</Link></li>
             </ul>
           </div>
