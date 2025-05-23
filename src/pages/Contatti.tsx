@@ -220,18 +220,8 @@ const Contatti = () => {
                     <Mail className="text-[#00D5F7] h-6 w-6 mt-1" />
                     <div>
                       <div className="font-semibold text-white">Email</div>
-                      <a href="mailto:info@connecteed.com" className="text-gray-300 hover:text-white transition-colors">
-                        info@connecteed.com
-                      </a>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start gap-4">
-                    <Phone className="text-[#95BF47] h-6 w-6 mt-1" />
-                    <div>
-                      <div className="font-semibold text-white">Telefono</div>
-                      <a href="tel:+390123456789" className="text-gray-300 hover:text-white transition-colors">
-                        +39 01 2345 6789
+                      <a href="mailto:contact@connecteed.com" className="text-gray-300 hover:text-white transition-colors">
+                        contact@connecteed.com
                       </a>
                     </div>
                   </div>
@@ -241,8 +231,8 @@ const Contatti = () => {
                     <div>
                       <div className="font-semibold text-white">Sede</div>
                       <address className="text-gray-300 not-italic">
-                        Via Roma 123<br />
-                        20123 Milano, Italia
+                        Via della Conciliazione 44<br />
+                        00193 Roma, Italia
                       </address>
                     </div>
                   </div>
